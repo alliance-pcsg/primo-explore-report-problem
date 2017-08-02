@@ -1,0 +1,24 @@
+{
+  "name": "primo-explore-report-problem",
+  "version": "1.1.0",
+  "description": "adds a \"report a problem\" banner to the detail view of an item in primo-explore.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alliance-PCJWG/primo-explore-report-problem.git"
+  },
+  "keywords": [
+    "library",
+    "catalog",
+    "discovery",
+    "primo",
+    "primo-explore",
+    "exlibris"
+  ],
+  "author": "Nick Budak <budak@lclark.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alliance-PCJWG/primo-explore-report-problem/issues"
+  },
+  "homepage": "https://github.com/Alliance-PCJWG/primo-explore-report-problem#readme"
+}
