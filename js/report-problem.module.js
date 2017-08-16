@@ -2,7 +2,7 @@ angular
   .module('reportProblem', [])
   .component('prmActionListAfter', {
     template: `
-    <div class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">
+    <div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">
         <span class="margin-right-small">{{ message }}</span>
         <a ng-href="{{ link }}">
             <button class="button-with-icon zero-margin md-button md-button-raised md-primoExplore-theme md-ink-ripple" type="button" aria-label="Report a Problem" style="color: #5c92bd;">
@@ -18,5 +18,6 @@ angular
         $scope.message = reportProblemOptions.message
         $scope.button = reportProblemOptions.button
         $scope.link = reportProblemOptions.base + $location.search().docid
+        $scope.show = $location.path() === '/fulldisplay'
       }]
   })
