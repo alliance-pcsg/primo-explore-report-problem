@@ -1,6 +1,7 @@
 # primo-explore-report-problem
 
-<!-- ![Build Status](https://api.travis-ci.org/Alliance-PCJWG/primo-explore-clickable-logo.svg?branch=master) -->
+![Build Status](https://api.travis-ci.org/alliance-pcsg/primo-explore-report-problem.svg)
+[![npm](https://img.shields.io/npm/v/primo-explore-report-problem.svg)](https://www.npmjs.com/package/primo-explore-report-problem)
 
 ## Features
 A banner with a link to report a problem/bug appears below the "send to" actions in the details view. The text of the banner is configurable, and clicking the button will redirect to an external URL and append the docid of the record the patron was viewing to that URL.
@@ -50,11 +51,11 @@ The code below adds a banner similar to the above image.
 app.constant('reportProblemOptions', {
   message: "See something that doesn't look right?",
   button: "Report a Problem",
-  base: "http://watzek.lclark.edu/primo/reportproblem/?permalink_path="
+  base: "http://my.library.edu/reportproblem/?permalink_path="
 })
 ```
 
-<!-- ## Running tests
+## Running tests
 1. Clone the repo
 2. Run `npm install`
-3. Run `npm test` -->
+3. Run `npm test`
