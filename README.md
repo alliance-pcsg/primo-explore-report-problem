@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/primo-explore-report-problem.svg)](https://www.npmjs.com/package/primo-explore-report-problem)
 
 ## Features
-A banner with a link to report a problem/bug appears below the "send to" actions in the details view. The text of the banner is configurable, and clicking the button will redirect to an external URL and append the docid of the record the patron was viewing to that URL.
+A banner with a link to report a problem/bug appears below the "send to" actions in the details view. The text of the banner is configurable, and clicking the button will redirect to an external URL and pass the parameters of the current search to that URL. This can be used to auto-fill an external "report problem" form.
 
 ### Screenshot
 ![screenshot](screenshot.png)
@@ -43,7 +43,7 @@ You can configure the banner by passing a configuration object. All properties a
 |-----------|--------------|-----------------------------------------------------------------------------------------|
 | `message` | string       | banner text displayed next to the button.                                               |
 | `button`  | string       | text displayed on the button itself.                                                    |
-| `base`    | string (url) | base URL for your 'report a problem' page, to which the record's docid will be appended |
+| `base`    | string (url) | base URL for your 'report a problem' page, to which all of the search parameters will be sent |
 
 The code below adds a banner similar to the above image.
 
@@ -51,9 +51,16 @@ The code below adds a banner similar to the above image.
 app.constant('reportProblemOptions', {
   message: "See something that doesn't look right?",
   button: "Report a Problem",
-  base: "http://my.library.edu/reportproblem/?permalink_path="
+  base: "http://my.library.edu/reportproblem.php?"
 })
 ```
+
+When the button is clicked, if the user was viewing a page like: `https://primo.lclark.edu/primo-explore/fulldisplay?docid=CP71139633100001451&context=L&vid=......`
+
+They would be sent to:
+`http://my.library.edu/reportproblem.php?docid=CP71139633100001451&context=L&vid=.....`
+
+All of the URL parameters could then be handled by a server-side script.
 
 ## Running tests
 1. Clone the repo
