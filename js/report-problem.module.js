@@ -12,11 +12,11 @@ angular
         </a>\
     </div>\
     ',
-    controller: ['$scope', '$location', 'reportProblemOptions',
-      function ($scope, $location, reportProblemOptions) {
+    controller: ['$scope', '$location', '$httpParamSerializer', 'reportProblemOptions',
+      function ($scope, $location, $httpParamSerializer, reportProblemOptions) {
         $scope.message = reportProblemOptions.message
         $scope.button = reportProblemOptions.button
-        $scope.link = reportProblemOptions.base + $location.search().docid
         $scope.show = $location.path() === '/fulldisplay'
+        $scope.link = reportProblemOptions.base + $httpParamSerializer($location.search())
       }]
   })
