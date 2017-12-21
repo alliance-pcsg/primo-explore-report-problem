@@ -16,7 +16,7 @@ angular
       function ($scope, $location, $httpParamSerializer, reportProblemOptions) {
         $scope.message = reportProblemOptions.message
         $scope.button = reportProblemOptions.button
-        $scope.show = $location.path() === '/fulldisplay'
+        $scope.show = $location.path() === '/fulldisplay' || $location.path() === '/openurl'
         $scope.link = reportProblemOptions.base + $httpParamSerializer($location.search())
       }]
   })
