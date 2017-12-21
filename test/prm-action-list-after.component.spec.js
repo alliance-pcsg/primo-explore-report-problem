@@ -51,7 +51,14 @@ describe('prmActionListAfter component', function () {
     expect($scope.show).toBe(true)
   })
 
-  it('should not show up if not on a fulldisplay page', function () {
+  it('should show up on a services page', function () {
+    var $scope = {}
+    spyOn($location, 'path').and.returnValue('/openurl')
+    var ctrl = $componentController('prmActionListAfter', { $scope: $scope })
+    expect($scope.show).toBe(true)
+  })
+
+  it('should not show up if not on brief result page', function () {
     var $scope = {}
     spyOn($location, 'path').and.returnValue('/search')
     var ctrl = $componentController('prmActionListAfter', { $scope: $scope })
