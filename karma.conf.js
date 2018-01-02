@@ -1,4 +1,4 @@
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
     frameworks: ['jasmine'],
     reporters: ['spec'],
@@ -6,8 +6,8 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'js/*.module.js',
-      'test/*.spec.js'
-    ]
+      'dist/module.js',
+      'test/unit/*.spec.js',
+    ],
   })
 }
