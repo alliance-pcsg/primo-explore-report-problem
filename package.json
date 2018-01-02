@@ -2,7 +2,7 @@
   "name": "primo-explore-report-problem",
   "version": "2.1.0",
   "description": "adds a \"report a problem\" banner to the detail view of an item in primo-explore.",
-  "main": "index.js",
+  "main": "dist/module.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alliance-pcsg/primo-explore-report-problem.git"
@@ -15,7 +15,11 @@
     "primo-explore",
     "exlibris"
   ],
-  "author": "Nick Budak <budak@lclark.edu>",
+  "author": {
+    "name": "Nick Budak",
+    "email": "budak@lclark.edu",
+    "url": "https://github.com/thatbudakguy"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alliance-pcsg/primo-explore-report-problem/issues"
@@ -24,6 +28,14 @@
   "devDependencies": {
     "angular": "^1.6.6",
     "angular-mocks": "^1.6.6",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
+    "eslint-config-google": "^0.9.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-jasmine": "^1.1.0",
@@ -31,6 +43,7 @@
     "karma-spec-reporter": "0.0.31"
   },
   "scripts": {
+    "start": "./bin/run",
     "test": "karma start --single-run"
   }
 }
