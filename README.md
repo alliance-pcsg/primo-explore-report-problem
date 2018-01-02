@@ -1,6 +1,5 @@
 # primo-explore-report-problem
 
-![Build Status](https://api.travis-ci.org/alliance-pcsg/primo-explore-report-problem.svg)
 [![npm](https://img.shields.io/npm/v/primo-explore-report-problem.svg)](https://www.npmjs.com/package/primo-explore-report-problem)
 
 ## Features
@@ -21,8 +20,10 @@ A banner with a link to report a problem/bug appears below the "send to" actions
     ```
 4. Install this package:
     ```
-    npm install primo-explore-report-problem --save-dev
+    npm install primo-explore-report-problem
     ```
+
+alternatively, just copy `dist/module.js` into your package's `custom.js` file.
 
 ## Usage
 Once this package is installed, add `reportProblem` as a dependency for your custom module definition.
@@ -31,28 +32,24 @@ Once this package is installed, add `reportProblem` as a dependency for your cus
 var app = angular.module('viewCustom', ['reportProblem'])
 ```
 
-Note: If you're using the `--browserify` build option, you will need to first import the module with:
-
-```javascript
-import 'primo-explore-report-problem';
+Then, enable the customization by embedding it in the `prmActionListAfter` hook:
+```js
+app.component('prmActionListAfter', {template: '<oca-report-problem />'})
 ```
 
-You can configure the banner by passing a configuration object. All properties are required.
+#### Configuration
+You can configure the banner by passing in attributes to the `oca-report-problem` element. The `report-url` property is required; the others will default to the values shown in the screenshot.
 
 | name      | type         | usage                                                                                   |
 |-----------|--------------|-----------------------------------------------------------------------------------------|
-| `message` | string       | banner text displayed next to the button.                                               |
-| `button`  | string       | text displayed on the button itself.                                                    |
-| `base`    | string (url) | base URL for your 'report a problem' page, to which all of the search parameters will be sent |
+| `message-text` | string       | banner text displayed next to the button.                                               |
+| `button-text`  | string       | text displayed on the button itself.                                                    |
+| `report-url`    | string (url) | base URL for your 'report a problem' page, to which all of the search parameters will be sent |
 
-The code below adds a banner similar to the above image.
+The line below would add a banner with different button and message texts.
 
 ```js
-app.constant('reportProblemOptions', {
-  message: "See something that doesn't look right?",
-  button: "Report a Problem",
-  base: "http://my.library.edu/reportproblem.php?"
-})
+app.component('prmActionListAfter', {template: '<oca-report-problem report-url="http://my.library.edu/reportproblem.php?" message-text="Want to report a problem?" button-text="Submit report" />'})
 ```
 
 When the button is clicked, if the user was viewing a page like: `https://primo.lclark.edu/primo-explore/fulldisplay?docid=CP71139633100001451&context=L&vid=......`
