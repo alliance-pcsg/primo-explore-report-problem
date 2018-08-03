@@ -1,5 +1,5 @@
 {
-  "name": "primo-explore-report-problem",
+  "name": "@orbis-cascade/primo-explore-report-problem",
   "version": "3.0.0",
   "description": "adds a \"report a problem\" banner to the detail view of an item in primo-explore.",
   "main": "dist/module.js",
@@ -17,7 +17,7 @@
   ],
   "author": {
     "name": "Nick Budak",
-    "email": "budak@lclark.edu",
+    "email": "nbudak@princeton.edu",
     "url": "https://github.com/thatbudakguy"
   },
   "license": "MIT",
